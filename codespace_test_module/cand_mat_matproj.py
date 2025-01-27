@@ -26,7 +26,7 @@ if not os.path.exists(path_output_dir):
     
 # %%
 with MPRester(MY_API_KEY) as mpr:
-    res = mpr.materials.summary.search(formula = "SrTiO3", is_stable=True)
+    res = mpr.materials.summary.search(formula = "Eu2B2O5", is_stable=True)
     #print(res)
 
 if len(res[0].database_IDs) != 0:
@@ -35,6 +35,7 @@ else:
     ID_bool = False
 print(ID_bool)
 print(res[0].database_IDs)
+print(res[0])
 keys = res[0].database_IDs.keys()
 for key in res[0].database_IDs.keys():
     print(res[0].database_IDs[key])
